@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, Twitter, Download, Lock } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter, Download, Lock, Youtube } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -13,9 +13,6 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-2">
               <span className="font-mono text-sm font-bold tracking-wider text-zinc-100 light:text-zinc-900">
                 BLACKTECHSEC
-              </span>
-              <span className="font-mono text-xs text-brand-400 bg-brand-500/10 px-2 py-0.5 rounded border border-brand-500/20">
-                v2.0
               </span>
             </div>
             <p className="font-mono text-xs text-zinc-400 tracking-wide light:text-zinc-600">
@@ -91,13 +88,24 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <a 
-                  href="https://x.com/BlackTechSec_" 
+                  href="https://www.youtube.com/@AlexisTechSec" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-2 text-zinc-400 hover:text-red-400 transition-colors light:text-zinc-600 light:hover:text-red-600"
+                >
+                  <Youtube className="w-4 h-4 text-red-500" />
+                  <span>YouTube</span>
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://x.com/AlexisTechsec" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="inline-flex items-center gap-2 text-zinc-400 hover:text-zinc-100 transition-colors light:text-zinc-600 light:hover:text-zinc-900"
                 >
                   <Twitter className="w-4 h-4" />
-                  <span>Twitter / X</span>
+                  <span>X (Twitter)</span>
                 </a>
               </li>
               <li>

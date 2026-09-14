@@ -12,7 +12,8 @@ import {
   Mail,
   MapPin,
   Calendar,
-  Layers
+  Layers,
+  Youtube
 } from 'lucide-react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { Card } from '../components/common/Card';
@@ -115,6 +116,16 @@ export const AboutPage: React.FC = () => {
                 icon={<Linkedin className="w-4 h-4" />}
               >
                 LinkedIn
+              </Button>
+              <Button 
+                href="https://www.youtube.com/@AlexisTechSec" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                variant="outline" 
+                size="sm" 
+                icon={<Youtube className="w-4 h-4 text-red-500" />}
+              >
+                YouTube
               </Button>
             </div>
           </div>

@@ -2,6 +2,12 @@
 
 Todas las modificaciones notables realizadas en este proyecto están documentadas en este archivo según el estándar [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
+## [2.1.2] - 2026-09-14
+### Changed
+- Eliminación de todas las menciones a "V2" o "V2.0" en la interfaz de usuario pública y administrativa para mantener únicamente la marca pura **BLACKTECHSEC**.
+- Integración del canal oficial de YouTube: `https://www.youtube.com/@AlexisTechSec` en Navbar, Footer, About, Home y Contacto.
+- Actualización del enlace oficial de X (Twitter) a `https://x.com/AlexisTechsec` y handle `@AlexisTechsec` en toda la plataforma y metadatos SEO.
+
 ## [2.1.1] - 2026-09-14
 ### Fixed
 - Redirección automática de rutas alias `/index`, `/index.html` y `/home` hacia `/` en `App.tsx` para evitar confusión con la pantalla 404.

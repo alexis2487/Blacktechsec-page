@@ -69,7 +69,7 @@ export const AdminLayout: React.FC = () => {
           </div>
           <div>
             <h2 className="font-mono text-xs font-bold tracking-wider">BLACKTECHSEC</h2>
-            <p className="font-mono text-[10px] text-zinc-500">ADMINISTRADOR V2</p>
+            <p className="font-mono text-[10px] text-zinc-500">PANEL DE ADMINISTRACIÓN</p>
           </div>
         </div>
 

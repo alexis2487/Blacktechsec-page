@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Github, Twitter, Send, CheckCircle2, AlertCircle, Copy, Check } from 'lucide-react';
+import { Mail, Linkedin, Github, Twitter, Youtube, Send, CheckCircle2, AlertCircle, Copy, Check } from 'lucide-react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
@@ -142,7 +142,7 @@ export const ContactPage: React.FC = () => {
             </a>
 
             <a
-              href="https://x.com/BlackTechSec_"
+              href="https://x.com/AlexisTechsec"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-between p-4 rounded-xl border border-zinc-800 bg-zinc-900/40 hover:border-zinc-700 text-zinc-300 hover:text-white transition-all light:bg-white light:border-zinc-200 light:text-zinc-700 light:hover:border-zinc-300 light:hover:text-zinc-900"
@@ -150,11 +150,27 @@ export const ContactPage: React.FC = () => {
               <div className="flex items-center gap-3">
                 <Twitter className="w-5 h-5 text-accent-cyan" />
                 <div>
-                  <p className="text-sm font-medium">Twitter / X</p>
-                  <p className="font-mono text-xs text-zinc-500">@BlackTechSec_</p>
+                  <p className="text-sm font-medium">X (Twitter)</p>
+                  <p className="font-mono text-xs text-zinc-500">@AlexisTechsec</p>
                 </div>
               </div>
               <span className="text-xs font-mono text-brand-400">Seguir →</span>
+            </a>
+
+            <a
+              href="https://www.youtube.com/@AlexisTechSec"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-between p-4 rounded-xl border border-zinc-800 bg-zinc-900/40 hover:border-zinc-700 text-zinc-300 hover:text-white transition-all light:bg-white light:border-zinc-200 light:text-zinc-700 light:hover:border-zinc-300 light:hover:text-zinc-900"
+            >
+              <div className="flex items-center gap-3">
+                <Youtube className="w-5 h-5 text-red-500" />
+                <div>
+                  <p className="text-sm font-medium">Canal de YouTube</p>
+                  <p className="font-mono text-xs text-zinc-500">@AlexisTechSec</p>
+                </div>
+              </div>
+              <span className="text-xs font-mono text-brand-400">Suscribirse →</span>
             </a>
           </div>
 

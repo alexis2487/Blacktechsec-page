@@ -48,3 +48,14 @@ Este documento registra cronológicamente las decisiones arquitectónicas, de di
   2. Se ajustaron `projectsService.ts` y `contentService.ts` para que, si no hay suficientes elementos marcados como destacados, se complementen automáticamente con los proyectos/publicaciones más recientes del CMS.
   3. Se inyectaron meta tags anti-stale-cache en `index.html` (`no-cache`, `no-store`, `must-revalidate`) y se unificó el parámetro `cname` en `deploy.yml` a `www.blacktechsec.com`.
 
+---
+
+## Entrada 06: Supresión de Menciones a V2 y Actualización de Canales Oficiales (YouTube y X)
+* **Fecha:** 2026-09-14
+* **Decisión:** La marca debe presentarse limpia e intemporal como **BLACKTECHSEC**, sin etiquetas de versión como "V2" o "V2.0" en la interfaz.
+* **Acciones:**
+  1. Se removió la etiqueta `v2.0` del Footer y `V2.0` del radar técnico de la Home y del layout administrativo.
+  2. Se integró el canal de YouTube: `https://www.youtube.com/@AlexisTechSec` en Navbar (escritorio y móvil), Footer, About, Home y Contacto.
+  3. Se actualizó el enlace y handle de X a `https://x.com/AlexisTechsec` y `@AlexisTechsec` en toda la aplicación y metadatos SEO.
+
+

@@ -23,8 +23,8 @@ export const initialProfile: ProfileInfo = {
   socials: {
     github: 'https://github.com/alexis2487',
     linkedin: 'https://www.linkedin.com/in/jair-alexis-martinez-302b78305/',
-    twitter: 'https://x.com/BlackTechSec_',
-    youtube: '',
+    twitter: 'https://x.com/AlexisTechsec',
+    youtube: 'https://www.youtube.com/@AlexisTechSec',
     instagram: '',
     tiktok: '',
   },

@@ -18,7 +18,8 @@ import {
   User,
   Download,
   Mail,
-  Network
+  Network,
+  Youtube
 } from 'lucide-react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { Badge } from '../components/common/Badge';
@@ -258,7 +259,7 @@ export const HomePage: React.FC = () => {
 
                 {/* Node Footer */}
                 <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between text-[11px] font-mono text-zinc-500 light:border-zinc-200 light:text-zinc-400">
-                  <span>UNAD ALUMNI // V2.0</span>
+                  <span>UNAD ALUMNI // TECH HUB</span>
                   <Link to="/about" className="text-brand-400 hover:text-brand-300 flex items-center gap-1 font-sans font-medium text-xs">
                     Sobre Jair <ArrowRight className="w-3 h-3" />
                   </Link>
@@ -637,6 +638,17 @@ export const HomePage: React.FC = () => {
                   icon={<Linkedin className="w-4 h-4" />}
                 >
                   LinkedIn
+                </Button>
+
+                <Button 
+                  href="https://www.youtube.com/@AlexisTechSec" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  variant="ghost" 
+                  size="md"
+                  icon={<Youtube className="w-4 h-4 text-red-500" />}
+                >
+                  YouTube
                 </Button>
               </div>
             </div>

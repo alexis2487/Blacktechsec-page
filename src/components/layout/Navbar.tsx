@@ -8,6 +8,8 @@ import {
   Moon, 
   Download, 
   Github, 
+  Twitter,
+  Youtube,
   ShieldCheck, 
   FileText 
 } from 'lucide-react';
@@ -103,6 +105,30 @@ export const Navbar: React.FC = () => {
             <Github className="w-4 h-4" />
           </a>
 
+          {/* YouTube Channel */}
+          <a
+            href="https://www.youtube.com/@AlexisTechSec"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg text-zinc-400 hover:text-red-400 hover:bg-zinc-800/60 transition-colors light:text-zinc-600 light:hover:text-red-600 light:hover:bg-zinc-100"
+            title="Canal de YouTube @AlexisTechSec"
+            aria-label="YouTube"
+          >
+            <Youtube className="w-4 h-4" />
+          </a>
+
+          {/* X Profile */}
+          <a
+            href="https://x.com/AlexisTechsec"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 rounded-lg text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 transition-colors light:text-zinc-600 light:hover:text-zinc-900 light:hover:bg-zinc-100"
+            title="X (Twitter) @AlexisTechsec"
+            aria-label="X (Twitter)"
+          >
+            <Twitter className="w-4 h-4" />
+          </a>
+
           {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
@@ -190,6 +216,26 @@ export const Navbar: React.FC = () => {
             >
               <Github className="w-4 h-4" />
               <span>GitHub: @alexis2487</span>
+            </a>
+
+            <a
+              href="https://www.youtube.com/@AlexisTechSec"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-mono border border-zinc-800 bg-zinc-950 text-zinc-300 light:bg-white light:border-zinc-300 light:text-zinc-700 hover:text-red-400"
+            >
+              <Youtube className="w-4 h-4 text-red-500" />
+              <span>YouTube: @AlexisTechSec</span>
+            </a>
+
+            <a
+              href="https://x.com/AlexisTechsec"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-mono border border-zinc-800 bg-zinc-950 text-zinc-300 light:bg-white light:border-zinc-300 light:text-zinc-700"
+            >
+              <Twitter className="w-4 h-4" />
+              <span>X: @AlexisTechsec</span>
             </a>
 
             {isAdmin && (

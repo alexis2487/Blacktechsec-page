@@ -76,7 +76,7 @@ export const AdminDashboardPage: React.FC = () => {
             Panel de Control
           </h1>
           <p className="text-xs font-mono text-zinc-400">
-            Gestión centralizada del ecosistema BlackTechSec V2
+            Gestión centralizada del ecosistema BlackTechSec
           </p>
         </div>
 
