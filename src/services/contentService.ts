@@ -26,9 +26,14 @@ export async function getContent(): Promise<ContentItem[]> {
   }
 }
 
-export async function getFeaturedContent(): Promise<ContentItem[]> {
+export async function getFeaturedContent(limit: number = 4): Promise<ContentItem[]> {
   const all = await getContent();
-  return all.filter(c => c.featured && c.published);
+  const featured = all.filter(c => c.featured && c.published);
+  if (featured.length > 0) {
+    return featured.slice(0, limit);
+  }
+  const published = all.filter(c => c.published);
+  return published.slice(0, limit);
 }
 
 export async function getContentBySlug(slug: string): Promise<ContentItem | null> {

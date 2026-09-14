@@ -2,6 +2,13 @@
 
 Todas las modificaciones notables realizadas en este proyecto están documentadas en este archivo según el estándar [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
+## [2.1.1] - 2026-09-14
+### Fixed
+- Redirección automática de rutas alias `/index`, `/index.html` y `/home` hacia `/` en `App.tsx` para evitar confusión con la pantalla 404.
+- Inclusión de directivas de no-caché en `index.html` (`Cache-Control`, `Pragma`, `Expires`) para garantizar actualización instantánea del bundle en navegadores.
+- Ajuste en `projectsService.ts` y `contentService.ts` para que proyectos y contenidos creados desde el CMS se muestren en la Home incluso si no tienen flag manual de destacado.
+- Corrección de `cname` en `.github/workflows/deploy.yml` a `www.blacktechsec.com`.
+
 ## [2.1.0] - 2026-09-14
 ### Added
 - Documentación técnica unificada: `PROJECT.md`, `CURRENT_STATE.md`, `CHANGELOG.md`, `DEVELOPMENT_LOG.md`.

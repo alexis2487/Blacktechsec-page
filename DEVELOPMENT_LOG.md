@@ -37,3 +37,14 @@ Este documento registra cronológicamente las decisiones arquitectónicas, de di
   6. Las Notas Técnicas se estructuran como bitácora/journal de ingeniería.
   7. Al final del Home se ubica el teaser "¿Quién está detrás de BlackTechSec?" para invitar al usuario a la página `/about`, donde reside toda la trayectoria académica, certificaciones y descarga del CV formal.
   8. En el Navbar, los enlaces reflejan la navegación de un hub (`Explorar`, `Proyectos`, `Experimentos`, `Notas`, `Sobre mí`, `Contacto`), manteniendo un acceso sutil al CV sin convertirlo en el protagonista del header.
+
+---
+
+## Entrada 05: Unificación de Rutas (/index -> /) y Resincronización de Datos del CMS
+* **Fecha:** 2026-09-14
+* **Problema:** Al navegar a `/index`, el enrutador SPA de React Router no reconocía la ruta y mostraba el componente 404 (`NotFoundPage`), dando la impresión de un diseño competidor. Asimismo, los proyectos creados desde el CMS no siempre tenían flag de destacados y el navegador retenía caché estático de `index.html`.
+* **Solución Técnica:**
+  1. Se mapearon rutas de redirección en `src/App.tsx` para `/index`, `/index.html` y `/home` que redirigen limpiamente con `<Navigate to="/" replace />` a la ruta raíz `/`.
+  2. Se ajustaron `projectsService.ts` y `contentService.ts` para que, si no hay suficientes elementos marcados como destacados, se complementen automáticamente con los proyectos/publicaciones más recientes del CMS.
+  3. Se inyectaron meta tags anti-stale-cache en `index.html` (`no-cache`, `no-store`, `must-revalidate`) y se unificó el parámetro `cname` en `deploy.yml` a `www.blacktechsec.com`.
+

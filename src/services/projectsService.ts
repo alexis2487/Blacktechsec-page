@@ -27,9 +27,15 @@ export async function getProjects(): Promise<ProjectItem[]> {
   }
 }
 
-export async function getFeaturedProjects(): Promise<ProjectItem[]> {
+export async function getFeaturedProjects(limit: number = 6): Promise<ProjectItem[]> {
   const all = await getProjects();
-  return all.filter(p => p.featured);
+  const featured = all.filter(p => p.featured);
+  if (featured.length >= 3) {
+    return featured.slice(0, limit);
+  }
+  // Si hay pocos proyectos marcados como destacados, combinar con los más recientes
+  const nonFeatured = all.filter(p => !p.featured);
+  return [...featured, ...nonFeatured].slice(0, limit);
 }
 
 export async function getProjectBySlug(slug: string): Promise<ProjectItem | null> {

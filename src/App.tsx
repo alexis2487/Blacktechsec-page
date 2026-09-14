@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthContext';
 import { Layout } from './components/layout/Layout';
@@ -47,6 +47,9 @@ export const App: React.FC = () => {
             {/* Public layout */}
             <Route path="/" element={<Layout />}>
               <Route index element={<HomePage />} />
+              <Route path="index" element={<Navigate to="/" replace />} />
+              <Route path="index.html" element={<Navigate to="/" replace />} />
+              <Route path="home" element={<Navigate to="/" replace />} />
               <Route path="about" element={<AboutPage />} />
               <Route path="projects" element={<ProjectsPage />} />
               <Route path="projects/:slug" element={<ProjectDetailPage />} />
