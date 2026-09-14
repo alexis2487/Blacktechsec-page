@@ -2,6 +2,11 @@
 
 Todas las modificaciones notables realizadas en este proyecto están documentadas en este archivo según el estándar [Keep a Changelog](https://keepachangelog.com/es/1.0.0/).
 
+## [2.1.3] - 2026-09-14
+### Fixed
+- Corrección del selector de tema claro/oscuro: registro del plugin oficial de Tailwind CSS con la variante `light` (`html.light &`, `.light &`) para compilar correctamente todas las clases de modo claro (`light:*`) que eran omitidas por el compilador.
+- Reglas explícitas de fondo y texto para `html.light body` en `index.css` e `index.html`.
+
 ## [2.1.2] - 2026-09-14
 ### Changed
 - Eliminación de todas las menciones a "V2" o "V2.0" en la interfaz de usuario pública y administrativa para mantener únicamente la marca pura **BLACKTECHSEC**.

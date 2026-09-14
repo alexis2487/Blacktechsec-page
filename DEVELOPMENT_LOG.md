@@ -58,4 +58,15 @@ Este documento registra cronológicamente las decisiones arquitectónicas, de di
   2. Se integró el canal de YouTube: `https://www.youtube.com/@AlexisTechSec` en Navbar (escritorio y móvil), Footer, About, Home y Contacto.
   3. Se actualizó el enlace y handle de X a `https://x.com/AlexisTechsec` y `@AlexisTechsec` en toda la aplicación y metadatos SEO.
 
+---
+
+## Entrada 07: Corrección de la Variante Light en Tailwind CSS
+* **Fecha:** 2026-09-14
+* **Problema:** El botón de cambio de tema aplicaba la clase `.light` en `document.documentElement`, pero Tailwind CSS v3 no reconoce la variante `light:` de forma predeterminada (solo `dark:`). Como consecuencia, el compilador descartaba todas las clases con prefijo `light:*` en botones, tarjetas y texto, dejando la página oscura y sin contraste al alternar.
+* **Solución Técnica:**
+  1. Se registró en `tailwind.config.js` el plugin oficial con la variante `light` mapeada a `['html.light &', '.light &', ':is(.light &)']`.
+  2. Esto permitió que Tailwind genere más de 12.7 KB de reglas CSS específicas para el tema claro (`light:bg-white`, `light:border-zinc-200`, `light:text-zinc-900`, `light:shadow-md`, etc.).
+  3. Se definieron reglas directas en `index.css` e `index.html` para el body en modo claro.
+
+
 

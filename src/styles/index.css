@@ -13,7 +13,9 @@
 
   /* Light mode overrides */
   html.light body {
-    @apply bg-zinc-50 text-zinc-900 selection:bg-brand-500/20 selection:text-brand-900;
+    background-color: #fafafa !important;
+    color: #18181b !important;
+    @apply selection:bg-brand-500/20 selection:text-brand-900;
   }
 }
 
