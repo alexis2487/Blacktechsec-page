@@ -212,5 +212,6 @@ blacktechsec-v2/
 * ✅ Cero clichés de hacking tradicional; diseño sobrio, tecnológico y editorial.
 * ✅ Modo oscuro elegante y modo claro funcional.
 * ✅ Dominio vinculado y respondiendo con HTTPS (`blacktechsec.com` -> `www.blacktechsec.com`).
-* ✅ Rama de producción `gh-pages` compilada y actualizada automáticamente vía GitHub Actions.
+* ✅ Rama de producción `gh-pages` activa y sirviendo el bundle compilado de React 18 en vivo (200 OK).
+* ✅ Despliegue en producción verificado: scripts, estilos, imágenes y CV funcionando.
 
