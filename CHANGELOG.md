@@ -8,6 +8,7 @@ Todas las modificaciones notables realizadas en este proyecto están documentada
 - Inclusión de directivas de no-caché en `index.html` (`Cache-Control`, `Pragma`, `Expires`) para garantizar actualización instantánea del bundle en navegadores.
 - Ajuste en `projectsService.ts` y `contentService.ts` para que proyectos y contenidos creados desde el CMS se muestren en la Home incluso si no tienen flag manual de destacado.
 - Corrección de `cname` en `.github/workflows/deploy.yml` a `www.blacktechsec.com`.
+- Actualización de la fotografía oficial de perfil de Jair Alexis Martinez (`public/img/profile.jpg`).
 
 ## [2.1.0] - 2026-09-14
 ### Added
