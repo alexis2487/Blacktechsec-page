@@ -214,4 +214,6 @@ blacktechsec-v2/
 * ✅ Dominio vinculado y respondiendo con HTTPS (`blacktechsec.com` -> `www.blacktechsec.com`).
 * ✅ Rama de producción `gh-pages` activa y sirviendo el bundle compilado de React 18 en vivo (200 OK).
 * ✅ Despliegue en producción verificado: scripts, estilos, imágenes y CV funcionando.
+* ✅ Secretos de Supabase (`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`) configurados en GitHub Actions.
+
 
