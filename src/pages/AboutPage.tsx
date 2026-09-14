@@ -61,7 +61,7 @@ export const AboutPage: React.FC = () => {
       <section className="space-y-6">
         <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
           <img
-            src="/img/profile.jpg"
+            src="/img/perfil.jpeg"
             alt="Jair Alexis Martinez"
             className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl object-cover border-2 border-zinc-800 shadow-xl light:border-zinc-300"
             onError={(e) => {

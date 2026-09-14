@@ -580,7 +580,7 @@ export const HomePage: React.FC = () => {
               <div className="relative">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-500 to-accent-cyan opacity-30 blur" />
                 <img
-                  src="/img/profile.jpg"
+                  src="/img/perfil.jpeg"
                   alt="Jair Alexis Martinez"
                   className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl object-cover border-2 border-zinc-700/80 shadow-xl light:border-zinc-300"
                   onError={(e) => {
