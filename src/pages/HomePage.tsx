@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { 
   Terminal, 
   ArrowRight, 
-  Download, 
   Github, 
   Linkedin, 
   ExternalLink, 
@@ -14,7 +13,12 @@ import {
   Sparkles,
   Compass,
   FileText,
-  Layers
+  Layers,
+  Activity,
+  User,
+  Download,
+  Mail,
+  Network
 } from 'lucide-react';
 import { MetaTags } from '../components/seo/MetaTags';
 import { Badge } from '../components/common/Badge';
@@ -57,15 +61,61 @@ export const HomePage: React.FC = () => {
     loadData();
   }, []);
 
+  // Curated exploration areas with detailed descriptions
+  const explorationAreas = [
+    {
+      title: 'Inteligencia Artificial & Copilot Agents',
+      description: 'Investigación en agentes autónomos, modelos de lenguaje, flujos en Copilot Studio y herramientas generativas para desarrollo de software.',
+      icon: Sparkles,
+      tag: '#AI #AGENTS',
+      accent: 'text-amber-400 bg-amber-500/10 border-amber-500/20'
+    },
+    {
+      title: 'Ciberseguridad Aplicada & Hardening',
+      description: 'Diagnósticos de madurez para MiPymes, bastionado de entornos Linux/Windows, análisis de telemetría y seguridad defensiva.',
+      icon: Shield,
+      tag: '#SECURITY #DEFENSE',
+      accent: 'text-brand-400 bg-brand-500/10 border-brand-500/20'
+    },
+    {
+      title: 'Ingeniería Backend & APIs Distribuidas',
+      description: 'Arquitecturas modulares, diseño de APIs RESTful robustas en C# / ASP.NET Core y Python con persistencia en SQL Server y relacional.',
+      icon: Code2,
+      tag: '#BACKEND #DOTNET',
+      accent: 'text-accent-cyan bg-accent-cyan/10 border-accent-cyan/20'
+    },
+    {
+      title: 'Pipelines de Datos & Business Intelligence',
+      description: 'Modelado analítico, transformación ETL con Pandas y Python, y construcción de tableros interactivos de telemetría en Power BI.',
+      icon: Database,
+      tag: '#DATA #POWERBI',
+      accent: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20'
+    },
+    {
+      title: 'Automatización & Developer Experience',
+      description: 'Scripting avanzado en PowerShell y Bash, flujos de CI/CD en GitHub Actions y optimización de entornos de ingeniería de sistemas.',
+      icon: Cpu,
+      tag: '#AUTOMATION #DEVOPS',
+      accent: 'text-indigo-400 bg-indigo-500/10 border-indigo-500/20'
+    },
+    {
+      title: 'Redes & Infraestructura Segura',
+      description: 'Modelado de topologías de red en Cisco Packet Tracer, segmentación, análisis de protocolos IPv4/IPv6 y directivas de control de acceso.',
+      icon: Network,
+      tag: '#NETWORKING #CISCO',
+      accent: 'text-rose-400 bg-rose-500/10 border-rose-500/20'
+    }
+  ];
+
   return (
     <div className="space-y-24 py-8 sm:py-12">
       <MetaTags 
         title="BLACKTECHSEC — Personal Technology Hub | Jair Alexis Martinez"
-        description="Espacio tecnológico personal de Jair Alexis Martinez, Ingeniero de Sistemas. Explorando tecnología, IA, ciberseguridad, desarrollo backend y análisis de datos. Learn. Build. Explore. Share."
+        description="Espacio tecnológico personal de Jair Alexis Martinez. Explorando tecnología, inteligencia artificial, ciberseguridad, desarrollo de software y datos. Learn. Build. Explore. Share."
       />
 
       {/* =========================================================================
-          HERO SECTION
+          HERO SECTION — PERSONAL TECHNOLOGY HUB
           ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl border border-zinc-800/80 bg-gradient-to-b from-zinc-900/90 via-zinc-900/40 to-zinc-950 p-8 sm:p-12 lg:p-16 light:from-white light:via-zinc-50 light:to-zinc-100 light:border-zinc-200">
@@ -76,8 +126,8 @@ export const HomePage: React.FC = () => {
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left Column: Text & Bio */}
-            <div className="lg:col-span-8 space-y-6">
+            {/* Left Column: Brand & Editorial Statement */}
+            <div className="lg:col-span-7 space-y-6">
               
               {/* Brand & Pill Badges */}
               <div className="flex flex-wrap items-center gap-2">
@@ -88,47 +138,50 @@ export const HomePage: React.FC = () => {
                 <Badge variant="outline">
                   BLACK TECHNOLOGY SECURITY
                 </Badge>
-                <Badge variant="success">
-                  Disponible Remoto LATAM
+                <Badge variant="ghost">
+                  Personal Technology Hub
                 </Badge>
               </div>
 
               {/* Main Headline */}
-              <div className="space-y-2">
-                <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-zinc-100 light:text-zinc-900">
-                  Jair Alexis Martinez
+              <div className="space-y-3">
+                <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-zinc-100 light:text-zinc-900">
+                  BLACKTECHSEC
                 </h1>
-                <p className="font-mono text-base sm:text-lg text-brand-400 font-medium light:text-brand-600">
-                  Ingeniero de Sistemas · Technology · AI · Cybersecurity · Development
+                <p className="font-mono text-sm sm:text-base text-brand-400 font-medium light:text-brand-600">
+                  Technology · AI · Cybersecurity · Development
+                </p>
+                <p className="text-xl sm:text-2xl text-zinc-200 font-semibold tracking-tight light:text-zinc-800">
+                  &ldquo;Exploro tecnología, construyo cosas y comparto lo que aprendo.&rdquo;
                 </p>
               </div>
 
               {/* Honest presentation text */}
               <p className="text-base sm:text-lg text-zinc-300 max-w-2xl leading-relaxed light:text-zinc-700">
-                {profile?.bio || 'Exploro tecnología, inteligencia artificial, ciberseguridad y desarrollo backend mientras construyo proyectos y comparto lo que voy aprendiendo.'}
+                Un espacio personal para documentar proyectos de ingeniería, experimentos prácticos, notas de investigación y descubrimientos alrededor del desarrollo de software, la ciberseguridad, la inteligencia artificial y los datos.
               </p>
 
-              {/* Philosophy Mantra */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300 light:bg-zinc-100 light:border-zinc-300 light:text-zinc-800">
-                <span className="text-brand-400 font-bold">PHILOSOPHY:</span>
-                <span>LEARN. BUILD. EXPLORE. SHARE.</span>
+              {/* Author Attribution & Philosophy Mantra */}
+              <div className="flex flex-wrap items-center gap-3 pt-1">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 light:bg-zinc-100 light:border-zinc-300 light:text-zinc-800">
+                  <User className="w-3.5 h-3.5 text-brand-400" />
+                  <span>Por <strong>Jair Alexis Martinez</strong> · Ingeniero de Sistemas</span>
+                </div>
+
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-zinc-900/90 border border-zinc-800 text-xs font-mono text-zinc-300 light:bg-zinc-100 light:border-zinc-300 light:text-zinc-800">
+                  <span className="text-brand-400 font-bold">MANTRA:</span>
+                  <span>LEARN. BUILD. EXPLORE. SHARE.</span>
+                </div>
               </div>
 
-              {/* Action Buttons */}
+              {/* Primary Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 pt-4">
-                <Button to="/projects" variant="primary" size="lg" icon={<Code2 className="w-4 h-4" />}>
-                  Ver Proyectos
+                <Button to="/content" variant="primary" size="lg" icon={<Compass className="w-4 h-4" />}>
+                  Explorar Contenido
                 </Button>
                 
-                <Button 
-                  href="/Curriculum_Vitae.pdf" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  variant="secondary" 
-                  size="lg" 
-                  icon={<Download className="w-4 h-4" />}
-                >
-                  Descargar CV
+                <Button to="/projects" variant="secondary" size="lg" icon={<Code2 className="w-4 h-4" />}>
+                  Ver Proyectos
                 </Button>
 
                 <Button 
@@ -145,29 +198,72 @@ export const HomePage: React.FC = () => {
 
             </div>
 
-            {/* Right Column: Profile Picture and Live Status */}
-            <div className="lg:col-span-4 flex flex-col items-center justify-center">
-              <div className="relative group">
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-brand-500 to-accent-cyan opacity-40 blur group-hover:opacity-75 transition duration-300" />
-                <img
-                  src="/img/profile.jpg"
-                  alt="Foto de perfil de Jair Alexis Martinez"
-                  className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full object-cover border-2 border-zinc-700/80 shadow-2xl light:border-zinc-300"
-                  onError={(e) => {
-                    // Fallback to placeholder if asset load fails
-                    e.currentTarget.src = 'https://images.unsplash.com/photo-1534972195531-a756b1140f6c?w=400&h=400&fit=crop';
-                  }}
-                />
-              </div>
+            {/* Right Column: Technical Node Status Card */}
+            <div className="lg:col-span-5">
+              <div className="relative rounded-2xl border border-zinc-800 bg-zinc-950/80 p-6 shadow-2xl backdrop-blur-sm light:bg-white light:border-zinc-300">
+                
+                {/* Node Status Bar */}
+                <div className="flex items-center justify-between border-b border-zinc-800/80 pb-4 text-xs font-mono light:border-zinc-200">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                    <span className="text-zinc-300 font-semibold light:text-zinc-800">NODE STATUS: ONLINE</span>
+                  </div>
+                  <span className="text-zinc-500 light:text-zinc-400">LATAM // REMOTO</span>
+                </div>
 
-              {/* Location and Specialization pill */}
-              <div className="mt-6 text-center space-y-1">
-                <p className="font-mono text-xs text-zinc-400 light:text-zinc-600">
-                  📍 {profile?.location || 'Colombia · Remoto LATAM'}
-                </p>
-                <p className="font-mono text-xs text-emerald-400">
-                  ● {profile?.availability || 'Disponible para colaboración'}
-                </p>
+                {/* Hub Descriptor */}
+                <div className="py-4 border-b border-zinc-800/80 light:border-zinc-200 space-y-1">
+                  <p className="font-mono text-[11px] text-brand-400 font-semibold tracking-wider uppercase">
+                    BLACKTECHSEC LAB
+                  </p>
+                  <p className="text-xs text-zinc-400 light:text-zinc-600">
+                    Investigación técnica, prototipos de software y bitácora continua de aprendizaje.
+                  </p>
+                </div>
+
+                {/* Core Pillars List */}
+                <div className="py-4 space-y-3 font-mono text-xs">
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-zinc-900/60 border border-zinc-800/60 light:bg-zinc-50 light:border-zinc-200">
+                    <div className="flex items-center gap-2.5">
+                      <Sparkles className="w-4 h-4 text-amber-400" />
+                      <span className="text-zinc-200 light:text-zinc-800">Artificial Intelligence</span>
+                    </div>
+                    <span className="text-zinc-500 text-[11px]">Copilot & Agents</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-zinc-900/60 border border-zinc-800/60 light:bg-zinc-50 light:border-zinc-200">
+                    <div className="flex items-center gap-2.5">
+                      <Shield className="w-4 h-4 text-brand-400" />
+                      <span className="text-zinc-200 light:text-zinc-800">Applied Cybersecurity</span>
+                    </div>
+                    <span className="text-zinc-500 text-[11px]">Hardening & Defenses</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-zinc-900/60 border border-zinc-800/60 light:bg-zinc-50 light:border-zinc-200">
+                    <div className="flex items-center gap-2.5">
+                      <Code2 className="w-4 h-4 text-accent-cyan" />
+                      <span className="text-zinc-200 light:text-zinc-800">Backend Engineering</span>
+                    </div>
+                    <span className="text-zinc-500 text-[11px]">C# · .NET · Python</span>
+                  </div>
+
+                  <div className="flex items-center justify-between p-2 rounded-lg bg-zinc-900/60 border border-zinc-800/60 light:bg-zinc-50 light:border-zinc-200">
+                    <div className="flex items-center gap-2.5">
+                      <Database className="w-4 h-4 text-accent-emerald" />
+                      <span className="text-zinc-200 light:text-zinc-800">Data Pipelines & BI</span>
+                    </div>
+                    <span className="text-zinc-500 text-[11px]">SQL · Power BI</span>
+                  </div>
+                </div>
+
+                {/* Node Footer */}
+                <div className="pt-3 border-t border-zinc-800/80 flex items-center justify-between text-[11px] font-mono text-zinc-500 light:border-zinc-200 light:text-zinc-400">
+                  <span>UNAD ALUMNI // V2.0</span>
+                  <Link to="/about" className="text-brand-400 hover:text-brand-300 flex items-center gap-1 font-sans font-medium text-xs">
+                    Sobre Jair <ArrowRight className="w-3 h-3" />
+                  </Link>
+                </div>
+
               </div>
             </div>
 
@@ -177,12 +273,12 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          CURRENTLY EXPLORING (REQ 24)
+          CURRENTLY EXPLORING — ÁREAS DE INVESTIGACIÓN Y DESARROLLO
           ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-6">
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
+        <div className="space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-2">
               <div className="flex items-center gap-2 text-brand-400 font-mono text-xs uppercase tracking-wider">
                 <Compass className="w-4 h-4" />
                 <span>Enfoque Continuo</span>
@@ -190,28 +286,39 @@ export const HomePage: React.FC = () => {
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100 light:text-zinc-900">
                 Actualmente Explorando & Construyendo
               </h2>
+              <p className="text-sm text-zinc-400 max-w-2xl light:text-zinc-600">
+                Líneas de investigación activa, profundización técnica y experimentación práctica que impulsan el desarrollo de BlackTechSec.
+              </p>
             </div>
             <Link to="/about" className="hidden sm:inline-flex items-center gap-1 text-sm font-medium text-brand-400 hover:text-brand-300">
-              Ver perfil completo <ArrowRight className="w-4 h-4" />
+              Conocer enfoque de Jair <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {(profile?.currentlyExploring || []).map((topic, index) => {
-              const icons = [Cpu, Shield, Code2, Database, Sparkles];
-              const IconComp = icons[index % icons.length];
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {explorationAreas.map((area, index) => {
+              const IconComp = area.icon;
               return (
-                <Card key={index} className="flex items-start gap-4 p-5">
-                  <div className="p-2.5 rounded-xl bg-brand-500/10 text-brand-400 border border-brand-500/20 light:bg-brand-50 light:text-brand-600 light:border-brand-200">
-                    <IconComp className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium text-sm text-zinc-200 light:text-zinc-800 leading-snug">
-                      {topic}
+                <Card key={index} className="flex flex-col justify-between p-6 space-y-4 group">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className={`p-2.5 rounded-xl border ${area.accent}`}>
+                        <IconComp className="w-5 h-5" />
+                      </div>
+                      <span className="font-mono text-[10px] text-zinc-500 tracking-wider">
+                        {area.tag}
+                      </span>
+                    </div>
+                    <h3 className="font-semibold text-base text-zinc-100 group-hover:text-brand-400 transition-colors light:text-zinc-900">
+                      {area.title}
                     </h3>
-                    <p className="text-xs text-zinc-400 mt-1 light:text-zinc-500 font-mono">
-                      Investigación & Práctica
+                    <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed light:text-zinc-600">
+                      {area.description}
                     </p>
+                  </div>
+                  <div className="pt-2 border-t border-zinc-800/60 flex items-center justify-between text-[11px] font-mono text-zinc-500 light:border-zinc-200 light:text-zinc-400">
+                    <span>ESTADO: ACTIVO</span>
+                    <span className="text-brand-400/80">INVESTIGACIÓN</span>
                   </div>
                 </Card>
               );
@@ -221,22 +328,25 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          FEATURED PROJECTS (REQ 26)
+          THINGS I'VE BUILT / PROYECTOS DESTACADOS
           ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="space-y-6">
-          <div className="flex items-center justify-between">
-            <div className="space-y-1">
+        <div className="space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-2">
               <div className="flex items-center gap-2 text-brand-400 font-mono text-xs uppercase tracking-wider">
                 <Layers className="w-4 h-4" />
-                <span>Casos Prácticos & Software</span>
+                <span>Cosas que He Construido</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100 light:text-zinc-900">
-                Proyectos Destacados
+                Proyectos & Soluciones
               </h2>
+              <p className="text-sm text-zinc-400 max-w-2xl light:text-zinc-600">
+                Software real, prototipos funcionales y entornos construidos con rigor técnico, documentando decisiones arquitectónicas y código.
+              </p>
             </div>
             <Link to="/projects" className="inline-flex items-center gap-1 text-sm font-medium text-brand-400 hover:text-brand-300">
-              Todos los proyectos ({projects.length}) <ArrowRight className="w-4 h-4" />
+              Ver todos los proyectos ({projects.length}) <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -304,12 +414,12 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          LATEST EXPERIMENTS & LATEST NOTES (GRID DUAL) (REQ 27 & 28)
+          LABORATORIO DE EXPERIMENTOS & NOTAS TÉCNICAS (GRID DUAL)
           ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
-          {/* Column 1: Latest Experiments */}
+          {/* Column 1: Lab Experiments */}
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <div className="space-y-1">
@@ -318,11 +428,11 @@ export const HomePage: React.FC = () => {
                   <span>Laboratorio Técnico</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-100 light:text-zinc-900">
-                  Últimos Experimentos
+                  Experimentos & PoCs
                 </h3>
               </div>
               <Link to="/experiments" className="text-xs font-mono text-brand-400 hover:text-brand-300 flex items-center gap-1">
-                Ver todos <ArrowRight className="w-3 h-3" />
+                Ver laboratorio <ArrowRight className="w-3 h-3" />
               </Link>
             </div>
 
@@ -330,7 +440,7 @@ export const HomePage: React.FC = () => {
               {experiments.map((exp) => (
                 <Card key={exp.id} className="p-5 space-y-3">
                   <div className="flex items-center justify-between text-xs font-mono">
-                    <Badge variant="outline" size="sm">{exp.category}</Badge>
+                    <Badge variant="outline" size="sm">#LAB · {exp.category}</Badge>
                     <span className="text-zinc-400 light:text-zinc-500">{exp.publication_date}</span>
                   </div>
                   <Link to={`/experiments/${exp.slug}`}>
@@ -353,13 +463,13 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Column 2: Latest Notes */}
+          {/* Column 2: Technical Notes / Journal */}
           <div className="space-y-6">
             <div className="flex items-center justify-between">
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-accent-emerald font-mono text-xs uppercase tracking-wider">
                   <FileText className="w-4 h-4" />
-                  <span>Documentación Personal</span>
+                  <span>Bitácora & Journal</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-bold text-zinc-100 light:text-zinc-900">
                   Notas Técnicas
@@ -401,7 +511,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          FEATURED CONTENT / MULTIMEDIA (REQ 25)
+          FEATURED CONTENT / BIBLIOTECA & DIVULGACIÓN
           ========================================================================= */}
       {content.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -409,7 +519,7 @@ export const HomePage: React.FC = () => {
             <div className="flex items-center justify-between">
               <div className="space-y-1">
                 <div className="flex items-center gap-2 text-brand-400 font-mono text-xs uppercase tracking-wider">
-                  <Code2 className="w-4 h-4" />
+                  <Compass className="w-4 h-4" />
                   <span>Biblioteca & Divulgación</span>
                 </div>
                 <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100 light:text-zinc-900">
@@ -417,7 +527,7 @@ export const HomePage: React.FC = () => {
                 </h2>
               </div>
               <Link to="/content" className="inline-flex items-center gap-1 text-sm font-medium text-brand-400 hover:text-brand-300">
-                Ver todo <ArrowRight className="w-4 h-4" />
+                Ver todo el contenido <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
@@ -459,7 +569,84 @@ export const HomePage: React.FC = () => {
       )}
 
       {/* =========================================================================
-          CALL TO ACTION / CONTACT TEASER (REQ 12 & 35)
+          WHO IS BEHIND BLACKTECHSEC? (ABOUT TEASER)
+          ========================================================================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-3xl border border-zinc-800/80 bg-zinc-900/60 p-8 sm:p-12 lg:p-14 light:bg-zinc-50 light:border-zinc-300">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            {/* Author Photo */}
+            <div className="md:col-span-4 flex justify-center md:justify-start">
+              <div className="relative">
+                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-500 to-accent-cyan opacity-30 blur" />
+                <img
+                  src="/img/profile.jpg"
+                  alt="Jair Alexis Martinez"
+                  className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-2xl object-cover border-2 border-zinc-700/80 shadow-xl light:border-zinc-300"
+                  onError={(e) => {
+                    e.currentTarget.src = 'https://images.unsplash.com/photo-1534972195531-a756b1140f6c?w=400&h=400&fit=crop';
+                  }}
+                />
+              </div>
+            </div>
+
+            {/* Author Information & Context */}
+            <div className="md:col-span-8 space-y-4 text-center md:text-left">
+              <div className="space-y-1">
+                <span className="font-mono text-xs uppercase tracking-wider text-brand-400 font-semibold">
+                  Autor & Creador
+                </span>
+                <h2 className="text-2xl sm:text-3xl font-bold text-zinc-100 light:text-zinc-900">
+                  ¿Quién está detrás de BlackTechSec?
+                </h2>
+              </div>
+
+              <p className="text-base text-zinc-300 leading-relaxed light:text-zinc-700">
+                Soy <strong>Jair Alexis Martinez</strong>, Ingeniero de Sistemas egresado de la UNAD y estudiante de Especialización en Seguridad Informática. Concibo BlackTechSec como mi espacio abierto para construir proyectos reales, investigar nuevas tecnologías sin sesgos comerciales y compartir abiertamente lo que aprendo en el camino.
+              </p>
+
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 pt-1">
+                <Badge variant="outline">Backend (C# / .NET)</Badge>
+                <Badge variant="outline">Python & Pipelines</Badge>
+                <Badge variant="outline">Ciberseguridad Aplicada</Badge>
+                <Badge variant="outline">Power BI & SQL</Badge>
+              </div>
+
+              <div className="pt-3 flex flex-wrap items-center justify-center md:justify-start gap-3">
+                <Button to="/about" variant="primary" size="md" icon={<ArrowRight className="w-4 h-4" />}>
+                  Conoce más sobre mí
+                </Button>
+                
+                <Button 
+                  href="/Curriculum_Vitae.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  variant="outline" 
+                  size="md"
+                  icon={<Download className="w-4 h-4" />}
+                >
+                  Ver Curriculum Vitae
+                </Button>
+
+                <Button 
+                  href="https://www.linkedin.com/in/jair-alexis-martinez-302b78305/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  variant="ghost" 
+                  size="md"
+                  icon={<Linkedin className="w-4 h-4" />}
+                >
+                  LinkedIn
+                </Button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          CALL TO ACTION / CONTACT TEASER
           ========================================================================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-zinc-800 bg-gradient-to-r from-zinc-900 via-zinc-900/60 to-zinc-950 p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-8 light:from-white light:via-zinc-50 light:to-zinc-100 light:border-zinc-200">
@@ -468,11 +655,11 @@ export const HomePage: React.FC = () => {
               ¿Conversamos sobre tecnología o proyectos?
             </h3>
             <p className="text-sm sm:text-base text-zinc-400 light:text-zinc-600 leading-relaxed">
-              Siempre interesado en intercambiar ideas sobre desarrollo backend, ciberseguridad, automatización y análisis de datos.
+              Siempre interesado en intercambiar ideas sobre desarrollo backend, ciberseguridad aplicada, automatización y análisis de datos.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3">
-            <Button to="/contact" variant="primary" size="lg">
+            <Button to="/contact" variant="primary" size="lg" icon={<Mail className="w-4 h-4" />}>
               Enviar Mensaje
             </Button>
             <Button 

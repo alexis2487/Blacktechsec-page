@@ -42,21 +42,21 @@ export const ProjectsPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       <MetaTags 
-        title="Proyectos de Software y Ciberseguridad | Jair Alexis Martinez — BLACKTECHSEC"
-        description="Catálogo de proyectos de backend, seguridad aplicada, laboratorios y herramientas desarrolladas por Jair Alexis Martinez."
+        title="Cosas que He Construido — Proyectos | BLACKTECHSEC"
+        description="Software real, prototipos validados, APIs en C#, pipelines de datos y evaluaciones de ciberseguridad construidas por Jair Alexis Martinez."
       />
 
       {/* Header */}
       <div className="space-y-4 max-w-3xl">
         <div className="flex items-center gap-2 text-brand-400 font-mono text-xs uppercase tracking-wider">
           <Layers className="w-4 h-4" />
-          <span>Ingeniería en Práctica</span>
+          <span>Cosas que He Construido</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-zinc-100 light:text-zinc-900">
           Proyectos & Soluciones
         </h1>
         <p className="text-base text-zinc-400 leading-relaxed light:text-zinc-600">
-          Una muestra de software real, prototipos validados y entornos de infraestructura técnica construidos con rigor, desde APIs seguras en C# hasta pipelines de análisis en Python y evaluaciones de ciberseguridad.
+          Software real, prototipos funcionales y entornos de infraestructura técnica construidos con rigor, documentando decisiones arquitectónicas y código.
         </p>
       </div>
 

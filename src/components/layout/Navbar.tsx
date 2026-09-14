@@ -15,12 +15,11 @@ import { useTheme } from '../../context/ThemeContext';
 import { useAuth } from '../../context/AuthContext';
 
 const navLinks = [
-  { name: 'Inicio', path: '/' },
-  { name: 'Perfil', path: '/about' },
+  { name: 'Explorar', path: '/content' },
   { name: 'Proyectos', path: '/projects' },
-  { name: 'Contenido', path: '/content' },
   { name: 'Experimentos', path: '/experiments' },
   { name: 'Notas', path: '/notes' },
+  { name: 'Sobre mí', path: '/about' },
   { name: 'Contacto', path: '/contact' },
 ];
 

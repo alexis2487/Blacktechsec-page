@@ -45,18 +45,18 @@ export const ContentPage: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-10">
       <MetaTags 
-        title="Contenido & Publicaciones | Jair Alexis Martinez — BLACKTECHSEC"
-        description="Biblioteca multimedia y archivo de publicaciones técnicas sobre desarrollo, inteligencia artificial y ciberseguridad."
+        title="Explorar Contenido & Publicaciones — BLACKTECHSEC"
+        description="Biblioteca y archivo de publicaciones técnicas sobre desarrollo backend, inteligencia artificial, datos y ciberseguridad por Jair Alexis Martinez."
       />
 
       {/* Header */}
       <div className="space-y-4 max-w-3xl">
         <div className="flex items-center gap-2 text-brand-400 font-mono text-xs uppercase tracking-wider">
           <Share2 className="w-4 h-4" />
-          <span>Biblioteca Multimedia</span>
+          <span>Biblioteca & Archivo</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-zinc-100 light:text-zinc-900">
-          Contenido & Divulgación
+          Explorar Contenido & Publicaciones
         </h1>
         <p className="text-base text-zinc-400 leading-relaxed light:text-zinc-600">
           Índice unificado de publicaciones, videos, tutoriales y reflexiones técnicas compartidas en diferentes canales y plataformas tecnológicas.

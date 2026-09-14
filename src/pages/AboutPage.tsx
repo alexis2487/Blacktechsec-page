@@ -51,8 +51,8 @@ export const AboutPage: React.FC = () => {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
       <MetaTags 
-        title="Perfil & Trayectoria | Jair Alexis Martinez — BLACKTECHSEC"
-        description="Perfil profesional de Jair Alexis Martinez: Ingeniero de Sistemas enfocado en backend, análisis de datos, ciberseguridad aplicada e IA."
+        title="Sobre Jair | Ingeniero de Sistemas — BLACKTECHSEC"
+        description="Conoce a Jair Alexis Martinez: Ingeniero de Sistemas enfocado en backend, análisis de datos, ciberseguridad aplicada e IA. Creador de BlackTechSec."
       />
 
       {/* =========================================================================
@@ -70,7 +70,8 @@ export const AboutPage: React.FC = () => {
           />
           <div className="space-y-3 text-center sm:text-left flex-1">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
-              <Badge variant="accent">Ingeniero de Sistemas</Badge>
+              <Badge variant="accent">Creador de BlackTechSec</Badge>
+              <Badge variant="outline">Ingeniero de Sistemas · UNAD</Badge>
               <Badge variant="success">Disponible Remoto</Badge>
             </div>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-zinc-100 light:text-zinc-900">

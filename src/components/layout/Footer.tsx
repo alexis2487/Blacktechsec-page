@@ -41,19 +41,19 @@ export const Footer: React.FC = () => {
                 <Link to="/" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Inicio</Link>
               </li>
               <li>
-                <Link to="/about" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Perfil & Acerca de</Link>
+                <Link to="/content" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Explorar Contenido</Link>
               </li>
               <li>
                 <Link to="/projects" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Proyectos</Link>
-              </li>
-              <li>
-                <Link to="/content" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Contenido Multimedia</Link>
               </li>
               <li>
                 <Link to="/experiments" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Laboratorio de Experimentos</Link>
               </li>
               <li>
                 <Link to="/notes" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Notas Técnicas</Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Sobre Jair</Link>
               </li>
               <li>
                 <Link to="/contact" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Contacto</Link>
