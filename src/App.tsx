@@ -16,6 +16,7 @@ import { ExperimentDetailPage } from './pages/ExperimentDetailPage';
 import { NotesPage } from './pages/NotesPage';
 import { NoteDetailPage } from './pages/NoteDetailPage';
 import { ContactPage } from './pages/ContactPage';
+import { SupportPage } from './pages/SupportPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
 // Admin CMS Pages
@@ -60,6 +61,9 @@ export const App: React.FC = () => {
               <Route path="notes" element={<NotesPage />} />
               <Route path="notes/:slug" element={<NoteDetailPage />} />
               <Route path="contact" element={<ContactPage />} />
+              <Route path="apoyar" element={<SupportPage />} />
+              <Route path="support" element={<Navigate to="/apoyar" replace />} />
+              <Route path="donar" element={<Navigate to="/apoyar" replace />} />
               <Route path="*" element={<NotFoundPage />} />
             </Route>
 

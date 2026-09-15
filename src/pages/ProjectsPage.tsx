@@ -5,6 +5,7 @@ import { MetaTags } from '../components/seo/MetaTags';
 import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
 import { EmptyState } from '../components/common/EmptyState';
+import { SupportSection } from '../components/common/SupportSection';
 import { getProjects } from '../services/projectsService';
 import { ProjectItem } from '../types';
 
@@ -171,6 +172,9 @@ export const ProjectsPage: React.FC = () => {
           ))}
         </div>
       )}
+
+      {/* Support / Patronage Section */}
+      <SupportSection variant="full" />
 
     </div>
   );

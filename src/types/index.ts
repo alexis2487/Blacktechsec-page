@@ -113,5 +113,6 @@ export interface ProfileInfo {
     instagram?: string;
     tiktok?: string;
   };
+  donationUrl?: string;
   currentlyExploring: string[];
 }

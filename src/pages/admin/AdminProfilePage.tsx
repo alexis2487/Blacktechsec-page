@@ -268,6 +268,29 @@ export const AdminProfilePage: React.FC = () => {
             </div>
           </div>
 
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label className="block text-xs font-mono uppercase text-zinc-400 mb-1">YouTube URL</label>
+              <input
+                type="url"
+                value={profile.socials.youtube || ''}
+                onChange={e => setProfile({ ...profile, socials: { ...profile.socials, youtube: e.target.value } })}
+                className="w-full px-3 py-2 rounded-lg text-sm bg-zinc-900 border border-zinc-800 text-zinc-100"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-mono uppercase text-zinc-400 mb-1">Enlace de Apoyo / Donaciones (Wompi)</label>
+              <input
+                type="url"
+                value={profile.donationUrl || ''}
+                onChange={e => setProfile({ ...profile, donationUrl: e.target.value })}
+                placeholder="https://checkout.wompi.co/l/..."
+                className="w-full px-3 py-2 rounded-lg text-sm bg-zinc-900 border border-zinc-800 text-zinc-100"
+              />
+            </div>
+          </div>
+
           <div className="flex justify-end pt-4 border-t border-zinc-800">
             <Button type="submit" variant="primary" icon={<Save className="w-4 h-4" />}>
               Guardar Cambios de Perfil

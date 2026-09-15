@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, Twitter, Download, Lock, Youtube } from 'lucide-react';
+import { Github, Linkedin, Mail, Twitter, Download, Lock, Youtube, Heart } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -54,6 +54,12 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/contact" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600">Contacto</Link>
+              </li>
+              <li>
+                <Link to="/apoyar" className="text-zinc-400 hover:text-brand-400 transition-colors light:text-zinc-600 flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                  <span>Apoya mis proyectos</span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -126,6 +132,17 @@ export const Footer: React.FC = () => {
                 >
                   <Download className="w-3.5 h-3.5" />
                   <span>Descargar CV (PDF)</span>
+                </a>
+              </li>
+              <li className="pt-2">
+                <a 
+                  href="https://checkout.wompi.co/l/VPOS_ijlMeE" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 transition-all font-mono text-xs font-semibold group"
+                >
+                  <Heart className="w-3.5 h-3.5 fill-emerald-400 text-emerald-400 group-hover:scale-110 transition-transform" />
+                  <span>Apoyar proyectos (Wompi)</span>
                 </a>
               </li>
             </ul>

@@ -19,6 +19,7 @@ import { MetaTags } from '../components/seo/MetaTags';
 import { Card } from '../components/common/Card';
 import { Badge } from '../components/common/Badge';
 import { Button } from '../components/common/Button';
+import { SupportSection } from '../components/common/SupportSection';
 import { getProfile, getEducation, getCertifications, getSkills } from '../services/profileService';
 import { ProfileInfo, EducationItem, CertificationItem, SkillCategory } from '../types';
 
@@ -265,6 +266,11 @@ export const AboutPage: React.FC = () => {
           ))}
         </div>
       </section>
+
+      {/* =========================================================================
+          APOYO & MECENAZGO DE INVESTIGACIÓN
+          ========================================================================= */}
+      <SupportSection variant="full" url={profile?.donationUrl} />
 
       {/* =========================================================================
           DESCARGA DE CV Y CONTACTO

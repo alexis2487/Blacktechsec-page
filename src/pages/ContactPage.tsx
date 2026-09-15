@@ -3,6 +3,7 @@ import { Mail, Linkedin, Github, Twitter, Youtube, Send, CheckCircle2, AlertCirc
 import { MetaTags } from '../components/seo/MetaTags';
 import { Card } from '../components/common/Card';
 import { Button } from '../components/common/Button';
+import { SupportSection } from '../components/common/SupportSection';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -179,6 +180,9 @@ export const ContactPage: React.FC = () => {
             <p>● Remoto LATAM / Global</p>
             <p>● Respuesta estimada: 24-48 horas hábiles</p>
           </div>
+
+          {/* Support / Patronage Card */}
+          <SupportSection variant="compact" />
         </div>
 
         {/* Contact Form */}

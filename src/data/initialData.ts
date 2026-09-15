@@ -28,6 +28,7 @@ export const initialProfile: ProfileInfo = {
     instagram: '',
     tiktok: '',
   },
+  donationUrl: 'https://checkout.wompi.co/l/VPOS_ijlMeE',
   currentlyExploring: [
     'Artificial Intelligence & Copilot Agents',
     'Applied Cybersecurity & Threat Hunting',
