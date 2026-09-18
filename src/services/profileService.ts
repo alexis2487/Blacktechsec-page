@@ -17,7 +17,7 @@ export async function getProfile(): Promise<ProfileInfo> {
       .from('profile_settings')
       .select('data')
       .eq('key', 'main_profile')
-      .single();
+      .maybeSingle();
 
     if (error || !data?.data) {
       return { ...localProfile };
