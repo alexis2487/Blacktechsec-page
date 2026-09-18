@@ -6,6 +6,10 @@
 * **Dominio:** `https://www.blacktechsec.com/`
 * **Repositorio Remoto:** `git@github.com:alexis2487/Blacktechsec-page.git`
 * **Proyecto Supabase:** `rqawfhijrokvefzaaxof`
+* **Storage de Objetos:** Cloudflare R2 (`blacktechsec-storage`)
+* **Worker de Subida R2:** `https://blacktechsec-storage-worker.jairalexis2487.workers.dev`
+* **Dominio Público R2:** `https://pub-731e8dd084f74188a67aaecde316425d.r2.dev`
+
 
 ## Convenciones de Desarrollo
 * **Framework:** React 18 + TypeScript + Vite.
