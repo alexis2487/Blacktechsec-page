@@ -31,13 +31,14 @@ https://www.blacktechsec.com/
 2. **Secretos de Entorno (GitHub Actions Secrets):**
    * Navega a **Settings -> Secrets and variables -> Actions**.
    * Agrega las siguientes variables:
-     * `VITE_SUPABASE_URL`: `https://rqawfhijrokvefzaaxof.supabase.co`
+     * `VITE_SUPABASE_URL`: `https://tu-proyecto.supabase.co`
      * `VITE_SUPABASE_ANON_KEY`: (Tu clave pública `anon` de Supabase).
+     * `VITE_STORAGE_WORKER_URL`: `https://tu-worker.workers.dev`
 
 ## 3. Configuración en Supabase
 
-1. Abre el panel de Supabase: [https://supabase.com/dashboard/project/rqawfhijrokvefzaaxof](https://supabase.com/dashboard/project/rqawfhijrokvefzaaxof)
+1. Abre el panel de tu proyecto en Supabase Dashboard.
 2. Dirígete a **SQL Editor**.
 3. Copia y ejecuta el script `supabase/schema.sql` para crear las tablas, políticas RLS y el bucket de Storage `media`.
 4. Copia y ejecuta el script `supabase/seed.sql` para poblar la base de datos con los datos iniciales reales.
-5. En **Authentication -> Users**, crea el usuario administrador para Jair con el correo `alexis.martinez_systems.engineer@outlook.com` y una contraseña segura.
+5. En **Authentication -> Users**, crea el usuario administrador para Jair con el correo oficial y una contraseña segura.

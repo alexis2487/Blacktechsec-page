@@ -21,8 +21,9 @@
 3. **Configurar variables de entorno:**
    Crea un archivo `.env` basado en `.env.example`:
    ```env
-   VITE_SUPABASE_URL=https://rqawfhijrokvefzaaxof.supabase.co
+   VITE_SUPABASE_URL=https://tu-proyecto.supabase.co
    VITE_SUPABASE_ANON_KEY=tu_anon_key_aqui
+   VITE_STORAGE_WORKER_URL=https://tu-worker.workers.dev
    ```
    > **Nota:** Si no cuentas con las credenciales inmediatamente, el sistema funcionará automáticamente en modo local con los datos precargados.
 
